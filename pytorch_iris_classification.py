@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 
 # Preprocessing
-data = pd.read_csv('iris-flower-pytorch/iris.csv')
+data = pd.read_csv('iris-flower-classification-pytorch/iris.csv')
 print(data.describe())
 
 # Check if CUDA is available
@@ -53,7 +53,7 @@ class NeuralNetwork(nn.Module):
 input_dim = 4
 output_dim = 3
 neural_network = NeuralNetwork(input_dim, output_dim)
-learning_rate = 0.01
+learning_rate = 0.001
 
 # Optimizer and loss function
 criterion = nn.CrossEntropyLoss()
