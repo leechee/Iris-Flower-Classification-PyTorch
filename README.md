@@ -44,3 +44,6 @@ To input data from the Iris data set, make sure to replace ... with your correct
 ```
 data = pd.read_csv('...\IRIS.csv')
 ```
+
+### Results (100% Training and Testing Accuracy)
+![[plot]](assets/plot.png)
