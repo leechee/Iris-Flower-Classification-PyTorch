@@ -20,8 +20,6 @@ y = data['species']
 # Transforms species data from strings to vectors
 encoder = LabelEncoder()
 y_encoded = encoder.fit_transform(y)
-onehot_encoder = OneHotEncoder(sparse_output=False)
-y_oneHot = onehot_encoder.fit_transform(y_encoded.reshape(-1, 1))
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, y_encoded, test_size=0.2, random_state=42)
 
