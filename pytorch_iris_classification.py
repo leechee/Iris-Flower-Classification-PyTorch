@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 
-np.random.seed(19) # setting seed for reproducability
+np.random.seed(19) # setting seed for reproducibility
 
 # Preprocessing
 data = pd.read_csv('iris-flower-classification-pytorch/iris.csv')
