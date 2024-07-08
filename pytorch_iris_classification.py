@@ -38,16 +38,16 @@ Y_test = torch.LongTensor(Y_test)
 class NeuralNetwork(nn.Module):
     def __init__(self, n_input, n_output):
         super().__init__()
-        self.input = nn.Linear(n_input, 128)
-        self.hidden = nn.Linear(128, 64)
-        self.output = nn.Linear(64, n_output)
-        self.relu = nn.ReLU()
+        self.layers = nn.Sequential(
+        nn.Linear(n_input, 128),
+        nn.ReLU(),
+        nn.Linear(128, 64),
+        nn.ReLU(),       
+        nn.Linear(64, n_output)
+        )
 
     def forward(self, x):
-        out = self.relu(self.input(x))
-        out = self.relu(self.hidden(out))
-        out = self.output(out)
-        return out
+        return self.layers(x)
 
 input_dim = 4
 output_dim = 3
