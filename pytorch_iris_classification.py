@@ -7,6 +7,8 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 
+np.random.seed(19) # setting seed for reproducability
+
 # Preprocessing
 data = pd.read_csv('iris-flower-classification-pytorch/iris.csv')
 print(data.describe())
@@ -35,8 +37,7 @@ Y_test = torch.LongTensor(Y_test)
 
 class NeuralNetwork(nn.Module):
     def __init__(self, n_input, n_output):
-        np.random.seed(2)
-        super(NeuralNetwork, self).__init__()
+        super().__init__()
         self.input = nn.Linear(n_input, 128)
         self.hidden = nn.Linear(128, 64)
         self.output = nn.Linear(64, n_output)
